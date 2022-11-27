@@ -23,6 +23,7 @@ function App() {
     wordArray.forEach(() => underlines.push("_"));
     setVisibleWordInGame(underlines);
     setStartedGame(true);
+    console.log(selectedWord)
   }
 
   function isRightLetter(letra) {

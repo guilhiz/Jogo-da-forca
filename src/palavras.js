@@ -1,3 +1,26 @@
-const palavras = ["abacate", "abacaxi", "abelha", "abanador", "antologia", "amor", "aba", "abrigo", "abrir", "banana", "boi", "batata", "bacalhau", "bexiga", "bowl", "batedeira", "bisturi", "barreira", "banco", "caixa", "chantilly", "cachorro", "cuidado", "caneta", "carinho", "cabra", "cesto", "dados", "dizer", "danone", "dente", "diamante", "diafragma", "detonar", "dia", "elefante", "esmeralda", "esfinge", "esfera", "encontro", "ema", "escola", "economia", "formiga", "fama", "festa", "fiador", "ferver", "flauta", "figo", "fiapo", "fotografia", "goiaba", "gelo", "grito", "guria", "goleiro", "golfinho", "golfe", "girar", "harmonia", "haste", "hectare", "hepatite", "hiena", "hidrante", "igreja", "importante", "idoso", "irado", "identidade", "idioma", "idade", "idiota", "jantar", "jumento", "jararaca", "janela", "jerimum", "jaula", "jabuti", "jaleco", "laranja", "lua", "luz", "lindo", "lacraia", "lactose", "lacrar", "manga", "morango", "mico", "matar", "mingau", "moqueca", "mocassin", "nectarina", "nada", "navio", "namorado", "ninja", "natal", "narciso", "narina", "nabo", "ovo", "ostra", "obstetra", "orangotango", "olhar", "ortodoxo", "ouro", "ornamento", "pato", "polvo", "povoar", "pano", "princesa", "pizza", "patroa", "queijo", "quitanda", "quinta", "quantia", "quarentena", "quadrilha", "quaresma", "quartzo", "quebrar", "risada", "rio", "remar", "rato", "racional", "rainha", "radioatividade", "raiz", "raiva", "rachadura", "salada", "salamandra", "sacola", "siri", "sabre", "sucarose", "sabedoria", "sacerdote", "tatu", "tabacaria", "taberneiro", "torrada", "tamanho", "tatuagem", "trem", "uva", "universo", "unanimidade", "ubuntu", "universidade", "urso", "uivar", "unir", "vela", "valeta", "vacilo", "valor", "vagem", "vadiagem", "vaca", "valentia", "vidro", "valsa", "xadrez", "xilofone", "xarope", "xenofobia", "xereta", "xerife", "xaveco", "xixi", "xale", "zebra", "zagueiro", "zero", "zoeira", "zepelim", "zinco", "zumbido"];
+const palavras = [
+  "amarelar", "abanador", "amor", "abrigo", "abrir",
+  "bolado", "bizarro", "birita", "biscoiteiro", "banco",
+  "caixa", "cuidado", "cancelado", "carinho", "cringe",
+  "dados", "disney", "danone", "dente", "diamante",
+  "elefante", "esfera", "encontro", "escola", "economia",
+  "fogo", "fama", "festa", "flauta",  "fotografia",
+  "gelo", "grito", "goleiro", "gringo", "gatilho",
+  "harmonia", "honrar", "hoje", "hiena", "hype",
+  "igreja", "importante", "irado", "inferno", "idiota",
+  "jantar", "jumento", "janela", "jaula", "jaleco",
+  "louco", "lua", "luz", "lindo", "lacrar",
+  "maneiro", "militante", "mico", "matar", "mucilon",
+  "nada", "navio", "namorado", "ninja", "natal",
+  "ovo", "ostra", "olhar", "ouro", "ornamento",
+  "picada", "polvo", "princesa", "pizza", "patroa",
+  "queijo", "quantia", "quarentena", "quadrilha", "quebrar",
+  "risada", "role", "rato", "racional", "rainha",
+  "salada", "sinistro", "sinuca", "serrote", "sangue",
+  "tatu", "tabacaria", "tamanho", "tatuagem", "trem",
+  "uva", "universo", "ubuntu", "urso", "unha",
+  "vender", "vacilo", "valeu", "vaca", "vidro",
+  "xadrez", "xarope", "xenofobia", "xereta", "xaveco",
+  "zebra", "zagueiro", "zero", "zoeira", "zoado"];
 
 export default palavras;
