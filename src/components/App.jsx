@@ -9,7 +9,7 @@ function App() {
   const [selectedWord, setSelectedWord] = useState([]);
   const [visibleWordInGame, setVisibleWordInGame] = useState([]);
   const [errorCounter, setErrorCounter] = useState(0);
-  console.log(errorCounter)
+  const [startedGame, setStartedGame] = useState(false);
 
   function chooseWord() {
     let underlines = [];
@@ -18,13 +18,20 @@ function App() {
     setSelectedWord(wordArray);
     wordArray.forEach((w) => underlines.push("_"));
     setVisibleWordInGame(underlines);
+    setStartedGame(true)
     console.log(wordArray);
   }
 
   return (
     <div className="container">
       <Jogo errorCounter={errorCounter} visibleWordInGame={visibleWordInGame} chooseWord={chooseWord} />
-      <Letras clickedLetters={clickedLetters} setClickedLetters={setClickedLetters} selectedWord={selectedWord} setErrorCounter={setErrorCounter} />
+      <Letras
+        clickedLetters={clickedLetters}
+        setClickedLetters={setClickedLetters}
+        selectedWord={selectedWord}
+        setErrorCounter={setErrorCounter}
+        startedGame={startedGame}
+      />
       <Chute />
     </div>
   );

@@ -2,8 +2,7 @@ const alfabeto = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
 let count = 0
 
 export default function Letras(props) {
-  const { clickedLetters, setClickedLetters, selectedWord, setErrorCounter } = props;
-
+  const { clickedLetters, setClickedLetters, selectedWord, setErrorCounter, startedGame } = props;
 
   function isClicked(letra) {
     const arrayLettersClicked = [...clickedLetters, letra];
@@ -15,7 +14,6 @@ export default function Letras(props) {
       setClickedLetters(arrayLettersClicked);
       setErrorCounter(count)
       alert("Você errou otario")
-      console.log(count)
     }
   }
 
@@ -25,9 +23,9 @@ export default function Letras(props) {
       {alfabeto.map((a) => (
         <button
           key={a}
-          className={clickedLetters.includes(a) ? "disable" : null}
+          className={!startedGame || clickedLetters.includes(a) ? "disable" : null}
           onClick={() => isClicked(a)}
-          disabled={clickedLetters.includes(a) ? true : false}
+          disabled={!startedGame || clickedLetters.includes(a) ? true : false}
         >
           {a}
         </button>
