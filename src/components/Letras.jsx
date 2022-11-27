@@ -1,15 +1,7 @@
 const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 export default function Letras(props) {
-  const {
-    clickedLetters,
-    setClickedLetters,
-    selectedWord,
-    startedGame,
-    isRightLetter,
-    isWrongLetter
-  } = props;
-  const alfabetoUpperCase = alfabeto.map((a) => a.toUpperCase())
-
+  const { clickedLetters, setClickedLetters, selectedWord, startedGame, isRightLetter, isWrongLetter } = props;
+  const alfabetoUpperCase = alfabeto.map((a) => a.toUpperCase());
 
   function isClicked(letra) {
     const arrayLettersClicked = [...clickedLetters, letra];
@@ -17,7 +9,7 @@ export default function Letras(props) {
     if (selectedWord.includes(letra)) {
       isRightLetter(letra);
     } else {
-      isWrongLetter()
+      isWrongLetter();
     }
   }
 
@@ -29,6 +21,7 @@ export default function Letras(props) {
           className={!startedGame || clickedLetters.includes(a) ? "disable" : null}
           onClick={() => isClicked(a)}
           disabled={!startedGame || clickedLetters.includes(a) ? true : false}
+          data-test="letter"
         >
           {a}
         </button>

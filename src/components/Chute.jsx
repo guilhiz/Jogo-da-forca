@@ -17,11 +17,13 @@ export default function Chute(props) {
         id="input"
         value={inputText}
         onChange={(e) => standardizeWords(e.target.value)}
+        data-test="guess-input"
       />
       <button
         disabled={!startedGame ? true : false}
         className={!startedGame ? "disable" : null}
         onClick={() => guessWord()}
+        data-test="guess-button"
       >
         Chutar
       </button>

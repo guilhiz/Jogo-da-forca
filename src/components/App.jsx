@@ -26,7 +26,6 @@ function App() {
   }
 
   function isRightLetter(letra) {
-    console.log(selectedWord);
     const arr = visibleWordInGame;
     for (let i = 0; i < selectedWord.length; i++) {
       if (letra === selectedWord[i]) {
@@ -83,6 +82,7 @@ function App() {
         visibleWordInGame={visibleWordInGame}
         chooseWord={chooseWord}
         wordColor={wordColor}
+        selectedWord={selectedWord}
       />
       <Letras
         clickedLetters={clickedLetters}
