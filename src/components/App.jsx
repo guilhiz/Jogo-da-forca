@@ -11,9 +11,11 @@ function App() {
   const [errorCounter, setErrorCounter] = useState(0);
   const [startedGame, setStartedGame] = useState(false);
   const [wordColor, setWordColor] = useState("#000000");
+  const [labelText, setLabelText] = useState("Escolha uma palavra!");
+  const [inputText, setInputText] = useState("");
 
   function chooseWord() {
-    reset()
+    reset();
     let underlines = [];
     const randomizeWord = palavras[Math.floor(Math.random() * palavras.length)].toUpperCase();
     const wordArray = [...randomizeWord];
@@ -36,23 +38,42 @@ function App() {
     if (!currentWord.includes("_")) {
       setStartedGame(false);
       setWordColor("#27AE60");
+      setLabelText("Parabéns, você ganhou!");
     }
   }
 
   function isWrongLetter() {
     const count = errorCounter + 1;
-      setErrorCounter(count);
-      if (count === 6) {
-        setStartedGame(false);
-        setVisibleWordInGame(selectedWord)
-        setWordColor("#FF0000")
-      }
+    setErrorCounter(count);
+    if (count === 6) {
+      setStartedGame(false);
+      setLabelText("Lamento, você perdeu!");
+      setVisibleWordInGame(selectedWord);
+      setWordColor("#FF0000");
+    }
+  }
+
+  function guessWord() {
+    if (inputText === selectedWord.join("")) {
+      setStartedGame(false);
+      setVisibleWordInGame(selectedWord);
+      setWordColor("#27AE60");
+      setLabelText("Parabéns, você acertou!");
+    } else {
+      setErrorCounter(6);
+      setStartedGame(false);
+      setLabelText("Lamento, você errou!");
+      setVisibleWordInGame(selectedWord);
+      setWordColor("#FF0000");
+    }
   }
 
   function reset() {
-    setErrorCounter(0)
-    setClickedLetters([])
-    setWordColor("#000000")
+    setErrorCounter(0);
+    setClickedLetters([]);
+    setWordColor("#000000");
+    setLabelText("Já sei a palavra!");
+    setInputText("");
   }
 
   return (
@@ -71,7 +92,13 @@ function App() {
         isRightLetter={isRightLetter}
         isWrongLetter={isWrongLetter}
       />
-      <Chute />
+      <Chute
+        startedGame={startedGame}
+        labelText={labelText}
+        guessWord={guessWord}
+        setInputText={setInputText}
+        inputText={inputText}
+      />
     </div>
   );
 }
