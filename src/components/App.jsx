@@ -13,17 +13,17 @@ function App() {
   const [wordColor, setWordColor] = useState("#000000");
   const [labelText, setLabelText] = useState("Escolha uma palavra!");
   const [inputText, setInputText] = useState("");
+  const maxErrorsAllowed = 6;
 
   function chooseWord() {
     reset();
-    let underlines = [];
+    const underlines = [];
     const randomizeWord = palavras[Math.floor(Math.random() * palavras.length)].toUpperCase();
     const wordArray = [...randomizeWord];
     setSelectedWord(wordArray);
     wordArray.forEach(() => underlines.push("_"));
     setVisibleWordInGame(underlines);
     setStartedGame(true);
-    console.log(selectedWord)
   }
 
   function isRightLetter(letra) {
@@ -45,7 +45,7 @@ function App() {
   function isWrongLetter() {
     const count = errorCounter + 1;
     setErrorCounter(count);
-    if (count === 6) {
+    if (count === maxErrorsAllowed) {
       setStartedGame(false);
       setLabelText("Lamento, você perdeu!");
       setVisibleWordInGame(selectedWord);
@@ -60,7 +60,7 @@ function App() {
       setWordColor("#27AE60");
       setLabelText("Parabéns, você acertou!");
     } else {
-      setErrorCounter(6);
+      setErrorCounter(maxErrorsAllowed);
       setStartedGame(false);
       setLabelText("Lamento, você errou!");
       setVisibleWordInGame(selectedWord);
