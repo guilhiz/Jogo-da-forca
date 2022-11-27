@@ -11,16 +11,25 @@ function App() {
   const [errorCounter, setErrorCounter] = useState(0);
   const [startedGame, setStartedGame] = useState(false);
 
+
   function chooseWord() {
     let underlines = [];
     const randomizeWord = palavras[Math.floor(Math.random() * palavras.length)].toUpperCase();
     const wordArray = [...randomizeWord];
     setSelectedWord(wordArray);
-    wordArray.forEach((w) => underlines.push("_"));
+    wordArray.forEach(() => underlines.push("_"));
     setVisibleWordInGame(underlines);
     setStartedGame(true)
-    console.log(wordArray);
   }
+
+  function isRightWord(letra) {
+    const arr = visibleWordInGame
+    for (let i = 0; i < selectedWord.length; i++) {
+      if (letra === selectedWord[i]) {
+        arr[i] = selectedWord[i]
+      }
+    }
+}
 
   return (
     <div className="container">
@@ -29,8 +38,11 @@ function App() {
         clickedLetters={clickedLetters}
         setClickedLetters={setClickedLetters}
         selectedWord={selectedWord}
+        errorCounter={errorCounter}
         setErrorCounter={setErrorCounter}
         startedGame={startedGame}
+        setStartedGame={setStartedGame}
+        isRightWord={isRightWord}
       />
       <Chute />
     </div>

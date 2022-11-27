@@ -9,7 +9,7 @@ export default function Jogo(props) {
       <div className="jogo-direito">
         <button className="jogo-button" onClick={() => chooseWord()} >Escolher Palavra</button>
         <p className="jogo-palavra">
-          {visibleWordInGame.map((s) => s)}
+          {visibleWordInGame}
         </p>
       </div>
     </div>
