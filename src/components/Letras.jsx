@@ -1,31 +1,29 @@
-const alfabeto = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
+const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 export default function Letras(props) {
-  const { clickedLetters, setClickedLetters, selectedWord, errorCounter, setErrorCounter, startedGame, setStartedGame, isRightWord } = props;
-  let count = 0
+  const {
+    clickedLetters,
+    setClickedLetters,
+    selectedWord,
+    startedGame,
+    isRightLetter,
+    isWrongLetter
+  } = props;
+  const alfabetoUpperCase = alfabeto.map((a) => a.toUpperCase())
 
 
   function isClicked(letra) {
     const arrayLettersClicked = [...clickedLetters, letra];
+    setClickedLetters(arrayLettersClicked);
     if (selectedWord.includes(letra)) {
-      setClickedLetters(arrayLettersClicked);
-      alert("você acertou otario")
-      isRightWord(letra)
+      isRightLetter(letra);
     } else {
-      setClickedLetters(arrayLettersClicked);
-      count = errorCounter + 1
-      setErrorCounter(errorCounter + 1)
-      alert("Você errou otario")
-      if (count === 6) {
-        setStartedGame(false)
-      }
+      isWrongLetter()
     }
   }
 
-
   return (
     <div className="container-letras">
-      {alfabeto.map((a) => (
+      {alfabetoUpperCase.map((a) => (
         <button
           key={a}
           className={!startedGame || clickedLetters.includes(a) ? "disable" : null}

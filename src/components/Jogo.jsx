@@ -1,5 +1,5 @@
 export default function Jogo(props) {
-  const { errorCounter, visibleWordInGame, chooseWord } = props;
+  const { errorCounter, visibleWordInGame, chooseWord, wordColor } = props;
   return (
     <div className="container-jogo">
       <div className="jogo-image">
@@ -8,7 +8,7 @@ export default function Jogo(props) {
 
       <div className="jogo-direito">
         <button className="jogo-button" onClick={() => chooseWord()} >Escolher Palavra</button>
-        <p className="jogo-palavra">
+        <p className="jogo-palavra" style={{color: wordColor}}>
           {visibleWordInGame}
         </p>
       </div>

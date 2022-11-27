@@ -55,9 +55,7 @@ body {
   font-weight: 700;
   font-size: 50px;
   line-height: 68px;
-  display: flex;
-  justify-content: flex-end;
-  letter-spacing: 11px;
+  letter-spacing: 0.5rem;
 }
 
 .container-letras {
