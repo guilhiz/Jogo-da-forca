@@ -2,7 +2,6 @@
 
 ![forca](https://user-images.githubusercontent.com/109693663/204359100-4d25da30-1cf0-4c66-ad52-e8f818c9165d.gif)
 
-Projeto #08 - Jogo da Forca criado durante o bootcamp de desenvolvimento web da <a href="https://www.driven.com.br/" target="_blank">Driven :computer:</a>
 
 ## :robot: Tecnologias Utilizadas
 
